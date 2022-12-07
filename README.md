@@ -1,6 +1,8 @@
 
 Descrição das rotas da api, logo abaixo de cada endpoint, possui o formato json para o body da requisição.
 
+endereço para acessar API: https://peticoes-giovannizanotti.vercel.app/
+
 ---Rotas usuario para autenticação---
 
 usuario/cadastrar - rota usada para cadastrar um usuario
