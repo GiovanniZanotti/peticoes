@@ -3,7 +3,7 @@ Descrição das rotas da api, logo abaixo de cada endpoint, possui o formato jso
 
 Endereço para acessar API: https://peticoes-giovannizanotti.vercel.app/
 
-
+<br>
 
 ---Rotas usuario para autenticação---
 
@@ -15,7 +15,7 @@ Endereço para acessar API: https://peticoes-giovannizanotti.vercel.app/
   "senha": "123456"
 }
 
-
+<br>
 
 [POST] usuario/login - rota para autenticar um usuario, retornando um token
 
@@ -25,17 +25,17 @@ Endereço para acessar API: https://peticoes-giovannizanotti.vercel.app/
   "senha": "123456"
 }
 
-
+<br>
 
 ---Rotas peticao para gerenciar as peticoes---
 
 [GET] peticao - rota para receber todas as peticoes
 
-
+<br>
 
 [GET] peticao/:idPeticao - rota para receber uma peticao especifica(deve-se passar o id de uma peticao como parâmentro na url)
 
-
+<br>
 
 [POST] peticao/cadastrarPeticao - rota para cadastrar uma peticao(no campo criador, é utilizado o nome do usuário)
 
@@ -47,7 +47,7 @@ Endereço para acessar API: https://peticoes-giovannizanotti.vercel.app/
   "imagem": "http://image"
 }
 
-
+<br>
 
 [POST] peticao/assinar/:idPeticao - rota para um usuario assinar uma peticao(deve-se passar o id de uma peticao como parâmetro na url)
 
@@ -55,7 +55,7 @@ Endereço para acessar API: https://peticoes-giovannizanotti.vercel.app/
   "idUsuario":"638fed52b6e678387e0472da"
 }
 
-
+<br>
 
 [DELETE] peticao/deletar/:peticaoId - rota para deletar uma peticao(deve-se passar o id de uma peticao como parâmetro na url)
 
@@ -63,7 +63,7 @@ Endereço para acessar API: https://peticoes-giovannizanotti.vercel.app/
   "idUsuario":"638fed52b6e678387e0472da"
 }
 
-
+<br>
 
 [PUT] peticao/atualizarPeticao - rota para atualizar um peticao
 
@@ -80,8 +80,8 @@ Endereço para acessar API: https://peticoes-giovannizanotti.vercel.app/
     "__v": 0
 }
 
-
+<br>
 
 [GET] peticao/assinadas/:idUsuario - rota para retornar as peticoes que o usuario assinou(deve-se passar o id de um usuário como parâmetro na url)
 
-
+<br>
