@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"node index.js"
+    "start": "node index.js"
   },
   "engines": {
     "node": "14.x"
@@ -20,7 +20,7 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.10.0",
     "mongoose": "^6.6.5",
-    "supertest": "^6.3.2",
+    "supertest": "^6.3.3",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

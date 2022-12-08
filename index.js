@@ -16,3 +16,5 @@ app.use(function(req, res, next) {
 
 console.log(`listening http://localhost:${port}`)
 app.listen(port);
+
+module.exports = app;

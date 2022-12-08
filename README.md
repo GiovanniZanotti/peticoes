@@ -60,6 +60,7 @@ peticao/atualizarPeticao - rota para atualizar um peticao
         "638e5ee987f2ad4dd39dcdfb"
     ],
     "criador": "638e5ee987f2ad4dd39dcdfb",
+    "idUsuario":"63914317edd963dae8079d04",
     "descricao": "cinema no campus",
     "imagem": "http://image",
     "dataCriacao": "2022-12-06T12:59:00.478Z",

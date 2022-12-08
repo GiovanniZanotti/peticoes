@@ -24,9 +24,9 @@ router.get('/assinadas/:idUsuario', async(req, res)=>{
     if(peticoes != null){
 
       for(let i = 0; i < peticoes.length; i++){
-        if(peticoes[i].signed.length > 0){
-          for(let j = 0; j < peticoes[i].signed.length; j++){
-            if(peticoes[i].signed[j] == idUsuario){
+        if(peticoes[i].assinados.length > 0){
+          for(let j = 0; j < peticoes[i].assinados.length; j++){
+            if(peticoes[i].assinados[j] == idUsuario){
               peticoesSigned.push(peticoes[i]);
             }
           }
@@ -58,12 +58,12 @@ router.get('/:peticaoId', async(req, res)=>{
 router.use(authMiddleware);
 
 router.post('/cadastrarPeticao', async (req, res)=>{
-  const { titulo, descricao, imagem } = req.body;
+  const { titulo, descricao, criador, imagem } = req.body;
   try{
     const peticao = await Peticao.create({
       titulo: titulo,
       descricao: descricao,
-      criado: req.idUsuario,
+      criador: criador,
       imagem: imagem
     });
     return res.send({status: `peticao ${titulo} foi cadastrada`, '_id': String(peticao._id)});
@@ -73,7 +73,7 @@ router.post('/cadastrarPeticao', async (req, res)=>{
 });
 
 router.put('/atualizarPeticao', async(req, res)=>{
-  let idPeticao = req.body.idPeticao;
+  let idPeticao = req.body._id;
   try{
     const peticao = await Peticao.findById(idPeticao);
     if(peticao.criador !== req.body.idUsuario)
@@ -83,11 +83,13 @@ router.put('/atualizarPeticao', async(req, res)=>{
       obj['titulo'] = req.body.titulo;
     if(req.body.descricao)
       obj['descricao'] = req.body.descricao;
+      if(req.body.imagem)
+      obj['imagem'] = req.body.imagem;
   
     if(!Object.keys(obj).length)
       res.status(400).send({status: 'peticao não atualizada'});
   
-    await Peticao.updateOne({_id: id}, obj);
+    await Peticao.updateOne({_id: idPeticao}, obj);
   
     return res.send({status: `peticao ${idPeticao} atualizada`});
   } catch(e){
